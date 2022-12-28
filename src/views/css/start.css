@@ -1,0 +1,144 @@
+@font-face {
+  font-family: "Voyage";
+  src: url(../fonts/Voyage.otf);
+}
+.inactive {
+  display: none;
+}
+
+.active {
+  display: flex;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul li {
+  text-indent: 0;
+  list-style-type: 0;
+  list-style: none;
+}
+
+button,
+input {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+body {
+  background-color: black;
+  margin: 0 auto;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1300px;
+  background-color: black;
+}
+
+.cover {
+  width: 100vw;
+  height: 0vh;
+  position: absolute;
+  bottom: 0%;
+}
+
+.blacked {
+  height: 100vh;
+  background-color: black;
+  transition: height 1.2s cubic-bezier(0.74, 0.26, 0.17, 0.9);
+}
+
+.intro {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.intro .triangle-container {
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: 10rem;
+}
+.intro .triangle-container div {
+  width: 2rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.intro .triangle-container .right-container {
+  background-color: black;
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+  animation: right-triangle 4s forwards;
+  animation-timing-function: cubic-bezier(1, 0.32, 0.34, 1);
+}
+.intro .triangle-container .left-container {
+  background-color: black;
+  clip-path: polygon(100% 50%, 0 0, 0 98%);
+  animation: left-triangle 4s forwards;
+  animation-timing-function: cubic-bezier(1, 0.32, 0.34, 1);
+}
+@keyframes right-triangle {
+  0% {
+    transform: translateY(-450%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(0);
+    transform: translateX(0);
+  }
+  80% {
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(33.3333333333vw) rotate(180deg);
+  }
+}
+@keyframes left-triangle {
+  0% {
+    transform: translateY(450%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-33.3333333333vw) rotate(-180deg);
+  }
+}
+.intro .name-container {
+  font-family: "Voyage";
+  font-size: 3rem;
+  font-weight: normal;
+  position: absolute;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.intro .char {
+  transform: translateY(120px);
+  transition: transform 0.5s;
+}
+
+/*# sourceMappingURL=start.css.map */

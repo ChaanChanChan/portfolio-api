@@ -1,0 +1,105 @@
+@use 'main';
+@use 'mixins' as *;
+
+//COVER & BLACKED
+.cover{
+    width: 100vw;
+    height: 0vh;
+    position: absolute;
+    bottom: 0%;
+}
+.blacked{
+    height: 100vh;
+    background-color: black;
+    transition: height 1.2s cubic-bezier(.74,.26,.17,.9);
+}
+
+//INACTIVE CLASS
+
+.intro{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    .triangle-container{
+        display: flex;
+        flex-flow: row nowrap;
+        font-size: 10rem;
+
+        // TRIANGLES DIMENSIONES & PROPERTIES
+        div{
+            width: 2rem;
+            height: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right-container{
+            background-color: black;
+            clip-path: polygon(100% 0, 0 50%, 100% 100%);
+            animation: right-triangle 4s forwards;
+            animation-timing-function: cubic-bezier(1,.32,.34,1);
+        }
+        
+        .left-container{
+            background-color: black;
+            clip-path: polygon(100% 50%, 0 0, 0 98%);
+            animation: left-triangle 4s forwards;
+            animation-timing-function: cubic-bezier(1,.32,.34,1);
+        }
+
+        //FADE IN AND TRANSLATION
+        @keyframes right-triangle {
+            0%{
+                transform: translateY(-450%);
+                opacity: 0;
+            } 
+            30%{
+                opacity: 1;
+            }
+            50%{
+                transform: translateY(0);
+                transform: translateX(0);
+            }
+            80%{
+                transform: translateX(0) rotate(0deg);
+            }
+            100%{
+                transform: translateX(calc(100vw / 3)) rotate(180deg);
+            }     
+        }
+        @keyframes left-triangle {
+            0%{
+                transform: translateY(450%);
+                opacity: 0;
+                
+            }
+            30%{
+                opacity: 1;
+            }
+            50%{
+                transform: translateY(0);
+            }
+            80%{
+                transform: translateX(0) rotate(0deg);
+            }
+            100%{
+                transform: translateX(calc(100vw / -3)) rotate(-180deg);
+            }   
+        }
+    }
+
+    .name-container{
+        @include font ('Voyage', 3rem, normal);
+        position: absolute;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .char{
+        transform: translateY(120px);
+        transition: transform .5s;
+    }
+}
