@@ -1,28 +1,32 @@
 @use 'main';
 @use 'mixins' as *;
 
-header{
-    @include font ('Voyage', 3rem, normal);
-    @include flex (flex, flex-start, space-between, column nowrap);
+.header-container{
+    width: 100vw;
+    height: 0;
+    position: absolute;
+    bottom: 0%;
+    background-color: black;
+}
+
+.header-content{
     width: 100%;
     height: 100vh;
-    background-color: black;
-    margin-top: 1rem;
-
-    h1{
-        color: white;
-        line-height: 5rem;
-    }
-
-    h1:nth-of-type(2){
-        margin-top: -3rem;
-        text-align: right;
-    }
+    @include flex (none, space-around, space-around, row nowrap);
 
     .triangle{
-        background-color: white;
         width: 2rem;
         height: 2rem;
-        clip-path: polygon(0 100%, 0 0, 100% 0);
+        background-color: white;
+        clip-path: polygon(0 0, 0 100%, 100% 0);
+    }
+
+    .header-title-name, .header-title-full{
+        @include font ('Voyage', 5rem, normal);
+        color: white;
+    }
+
+    .header-title-full{
+        text-align: right;
     }
 }
