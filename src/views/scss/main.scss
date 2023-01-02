@@ -6,16 +6,8 @@
     src: url(../fonts/Voyage.otf);
 }
 
-
-//SHOW & HIDE
-.inactive{
-    display: none;
-}
-
-.active{
-    display: flex;
-}
-
+//font-family: 'Source Code Pro', monospace;
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;600&display=swap');
 
 // RESET
 *{
@@ -45,9 +37,7 @@ input{
     outline: inherit;
 }
 
-
-//MAIN SECTION
-body{
-    width: 100vw;
+main{
+    max-width: 1500px;
     margin: 0 auto;
 }

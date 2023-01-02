@@ -1,7 +1,6 @@
 @use 'main';
 @use 'mixins' as *;
 
-//INACTIVE CLASS
 
 .intro{
     width: 100%;
@@ -43,19 +42,13 @@
         transform: translateY(120px);
         transition: transform .5s;
     }
-}
 
-//COVER & BLACKED
-.cover{
-    width: 100vw;
-    height: 0;
-    position: absolute;
-    bottom: 0%;
-    background-color: black;
-    z-index: -1;
-}
-.blacked{
-    height: 100vh;
-    background-color: black;
-    transition: height 1.2s cubic-bezier(.74,.26,.17,.9);
+    .cover{
+        background-color: black;
+        width: 100%;
+        max-width: 1500px;
+        height: 0;
+        position: absolute;
+        bottom: 0;
+    }
 }

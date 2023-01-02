@@ -1,0 +1,9 @@
+@use 'main';
+@forward 'mixins';
+@use 'mixins' as *;
+
+.about-me{
+    width: 100%;
+    height: 100vh;
+    background-color: red;
+}

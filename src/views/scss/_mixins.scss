@@ -9,3 +9,24 @@
     align-items: $align;
     flex-flow: $flow;
 }
+
+@mixin grid ($dis, $just, $align, $col){
+    display: $dis;
+    justify-items: $just;
+    align-items: $align;
+    grid-template-columns: $col;
+}
+
+//MEDIA QUERIES
+$breakpoints: (
+    xs: 480px,
+    sm: 680px,
+    md: 840px,
+    lg: 1000px
+);
+
+@mixin media($breakpoint) {
+    @media screen and (max-width: map-get($breakpoints, $breakpoint)){
+        @content
+    }
+}

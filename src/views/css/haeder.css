@@ -1,15 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;600&display=swap");
 @font-face {
   font-family: "Voyage";
   src: url(../fonts/Voyage.otf);
 }
-.inactive {
-  display: none;
-}
-
-.active {
-  display: flex;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -37,41 +30,140 @@ input {
   outline: inherit;
 }
 
-body {
-  width: 100vw;
+main {
+  max-width: 1500px;
   margin: 0 auto;
 }
 
 .header-container {
-  width: 100vw;
-  height: 0;
-  position: absolute;
-  bottom: 0%;
+  width: 100%;
+  display: none;
+  margin: 0 auto;
   background-color: black;
 }
 
 .header-content {
   width: 100%;
   height: 100vh;
-  display: none;
-  justify-content: space-around;
-  align-items: space-around;
-  flex-flow: row nowrap;
+  position: relative;
+  margin-top: 1rem;
+  padding: 1rem 5rem 0 5rem;
+  background-color: black;
 }
 .header-content .triangle {
   width: 2rem;
   height: 2rem;
   background-color: white;
+  position: absolute;
+  top: 0;
+  left: 5rem;
+  margin-bottom: 0.5rem;
   clip-path: polygon(0 0, 0 100%, 100% 0);
 }
-.header-content .header-title-name, .header-content .header-title-full {
+.header-content nav {
+  position: absolute;
+  top: 0;
+  right: 5rem;
+  width: min-content;
+  height: min-content;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+  font-family: "Source Code Pro";
+  font-size: 1.6rem;
+  font-weight: 200;
+}
+.header-content .header-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
   font-family: "Voyage";
   font-size: 5rem;
   font-weight: normal;
+  width: 100%;
+  max-height: 100vh;
+  height: min-content;
   color: white;
+  line-height: 4rem;
 }
-.header-content .header-title-full {
+.header-content .header-title .name {
+  width: 100%;
+  position: relative;
+  left: 0;
+  z-index: 2;
+}
+.header-content .header-title .portrait {
+  min-width: 679px;
+  height: 38rem;
+  margin: -2rem 0 -5rem 0;
+  background-image: url(../img/portrait.jpg);
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.header-content .header-title .full {
+  width: 100%;
+  position: relative;
+  right: 0;
   text-align: right;
+}
+
+@media screen and (max-width: 840px) {
+  .header-content {
+    padding: 1rem 2rem 0 2rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .header-content {
+    padding: 0.2rem 2rem 0 2rem;
+  }
+}
+@media screen and (max-width: 840px) {
+  .header-content .header-title {
+    font-size: 4rem;
+    line-height: 3rem;
+  }
+}
+@media screen and (max-width: 680px) {
+  .header-content .header-title {
+    font-size: 3rem;
+    line-height: 2.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .header-content .header-title {
+    font-size: 2rem;
+    line-height: 1.8rem;
+  }
+}
+@media screen and (max-width: 840px) {
+  .header-content .header-title .portrait {
+    width: 100%;
+    height: 35rem;
+    min-width: unset;
+    margin: 0 auto;
+    margin: -4rem 0 -4rem 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .header-content .header-title .portrait {
+    width: 100%;
+    height: 35rem;
+    min-width: unset;
+    margin: 0 auto;
+    margin: -2rem 0 -2rem 0;
+  }
+}
+@media screen and (max-width: 840px) {
+  .header-content .triangle {
+    left: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-bottom: 2rem;
+  }
 }
 
 /*# sourceMappingURL=haeder.css.map */
