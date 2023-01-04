@@ -18,15 +18,28 @@
 }
 
 //MEDIA QUERIES
-$breakpoints: (
+$breakpoints-width: (
     xs: 480px,
     sm: 680px,
     md: 840px,
     lg: 1000px
 );
 
-@mixin media($breakpoint) {
-    @media screen and (max-width: map-get($breakpoints, $breakpoint)){
+@mixin media-width($breakpoint) {
+    @media screen and (max-width: map-get($breakpoints-width, $breakpoint)){
+        @content
+    }
+}
+
+$breakpoints-height: (
+    xs: 480px,
+    sm: 680px,
+    md: 760px,
+    lg: 1090px
+);
+
+@mixin media-height($breakpoint) {
+    @media screen and (min-height: map-get($breakpoints-height, $breakpoint)){
         @content
     }
 }
