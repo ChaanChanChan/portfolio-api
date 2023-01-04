@@ -86,6 +86,11 @@ welcomeBtn.addEventListener('click', () => {
             display: "flex"
         })
 
+        //ABOUT ME IN
+        // .to('.about-me', {
+        //     display: "block"
+        // })
+
         //INTRO OUT
         .to('.intro', {
             display: "none"

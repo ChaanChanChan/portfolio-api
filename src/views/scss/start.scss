@@ -5,6 +5,7 @@
 .intro{
     width: 100%;
     height: 100vh;
+    overflow: hidden;
     @include flex (flex, center, center, column nowrap);
 
     .triangle-container{
@@ -19,6 +20,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
+
+            @include media-width(sm){
+                width: 1.5rem;
+                height: 1.5rem;
+            }
         }
 
         .triangle-right{

@@ -59,12 +59,12 @@
 
     .header-title{
         @include flex (flex, center, center, column nowrap);
-        @include font ('Voyage', 5rem, normal);
+        @include font ('Voyage', 4rem, normal);
         width: 100%;
         max-height: 100vh;
         height: min-content;
         color: white;
-        line-height: 4.2rem;
+        line-height: 3.5rem;
 
         .name{
             width: 100%;
